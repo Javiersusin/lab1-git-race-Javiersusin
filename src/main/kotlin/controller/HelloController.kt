@@ -7,13 +7,14 @@ import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
+import java.time.LocalDateTime
 
 @Controller
 class HelloController(
-    @param:Value("\${app.message:Hello World}") 
+    @param:Value("\${app.message:Hello World}")
     private val message: String
 ) {
-    
+
     @GetMapping("/")
     fun welcome(
         model: Model,
@@ -28,11 +29,17 @@ class HelloController(
 
 @RestController
 class HelloApiController {
-    
+
     @GetMapping("/api/hello", produces = [MediaType.APPLICATION_JSON_VALUE])
     fun helloApi(@RequestParam(defaultValue = "World") name: String): Map<String, String> {
+        val actualHour = LocalDateTime.now().hour
+        val hello = when (actualHour) {
+            in 7..13 -> "Good Morning"
+            in 14..21 -> "Good Afternoon"
+            else -> "Good Night"
+        }
         return mapOf(
-            "message" to "Hello, $name!",
+            "message" to "$hello, $name!",
             "timestamp" to java.time.Instant.now().toString()
         )
     }
