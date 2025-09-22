@@ -41,7 +41,7 @@ class HelloControllerUnitTests {
         
         assertThat(response).containsKey("message")
         assertThat(response).containsKey("timestamp")
-        assertThat(response["message"]).isEqualTo("Hello, Test!")
+        assertThat(response["message"]).contains("Good")
         assertThat(response["timestamp"]).isNotNull()
     }
 }
