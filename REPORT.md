@@ -11,6 +11,7 @@
 Lo primero de todo es que para compilar y ejecutar, estoy usando la terminal Git Bash. Esto me ha supuesto tener que aplicar : 'dos2unix gradlew'
  para poder convertir el tipo de saltos de linea de Windows al usado en Unix, y poder así ejecutar el comando de docker : 'docker-compose -f docker-compose.dev.yml up --build'
 
+Después he implementado el modo claro/oscuro, he aprovechado tal cual el modo claro ya dado y he añadido un script para cambiar al modo oscuro cuando en un select que he dejdao en el header eliges la opción de Dark. En ese momento se usa dark.css en el que he ido comprobando las clases necesarias para cambiar el fondo y el color de letras, además de añadir !important para sobreponerme a bootstrap.
 ## AI Disclosure
 ### AI Tools Used
 - [List specific AI tools used]
@@ -21,7 +22,7 @@ Lo primero de todo es que para compilar y ejecutar, estoy usando la terminal Git
 - [Any modifications made to AI-generated code]
 He usado ChatGPT para preguntarle con que libreria trabajar para limitar el uso de las funciones segun las peticiones a una API desde un mismo punto. para esto me recomendó añadir a las dependencias la línea :     implementation("com.github.vladimir-bukhtoyarov:bucket4j-core8.4.0")
 . Y una vez puesta simplemente queda hacer un ./gradlew build. Tuve un problema y es que ChatGPT me había dado una versión sin publicar de esa libreria, así que tras un tiempo perdido busqué cuales lo estaban y cambié a la 7.6.0.
-- 
+- NO lo he conseguido.
 
 ### Original Work
 - [Describe work done without AI assistance]

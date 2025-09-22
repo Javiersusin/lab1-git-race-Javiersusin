@@ -1,0 +1,61 @@
+
+body {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+.navbar {
+    background-color: #1f1f1f !important;
+}
+
+.card {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
+.card-header {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+.footer, footer {
+    background-color: #1f1f1f !important;
+    color: #e0e0e0 !important;
+}
+
+input, button, select, textarea {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
+}
+.alert {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+.http-debug-request, .http-debug-response {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.text-muted {
+    color: #bbbbbb !important;
+}
+
+.bg-light {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.bg-info {
+    background-color: #1a73e8 !important;
+    color: #ffffff !important;
+}
+
+.text-primary, .text-success, .text-warning {
+    color: inherit !important;
+}
+.bg-white {
+    color : #000000 !important;
+}

@@ -21,6 +21,10 @@
             <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="/actuator/health" target="_blank">Health</a>
                 <a class="nav-link" href="/api/hello">API</a>
+                <select id="themeSelector" class="form-select form-select-sm ms-2" style="width: 120px;">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
             </div>
         </div>
     </nav>
@@ -159,6 +163,29 @@
             };
             document.head.appendChild(script);
         })();
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const themeSelector = document.getElementById("themeSelector");
+            const applyTheme = (theme) => {
+                const existingLink = document.getElementById("dark-mode-style");
+                if (theme === "dark") {
+                    if (!existingLink) {
+                        const link = document.createElement("link");
+                        link.id = "dark-mode-style";
+                        link.rel = "stylesheet";
+                        link.href = "/css/dark.css";
+                        document.head.appendChild(link);
+                    }
+                } else {
+                    if (existingLink) existingLink.remove();
+                }
+            };
+            applyTheme(themeSelector.value);
+            themeSelector.addEventListener("change", (event) => {
+                applyTheme(event.target.value);
+            });
+        });
     </script>
 </body>
 </html>
