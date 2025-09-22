@@ -8,6 +8,8 @@
 
 ## Learning Outcomes
 [What you learned from this assignment]
+Lo primero de todo es que para compilar y ejecutar, estoy usando la terminal Git Bash. Esto me ha supuesto tener que aplicar : 'dos2unix gradlew'
+ para poder convertir el tipo de saltos de linea de Windows al usado en Unix, y poder así ejecutar el comando de docker : 'docker-compose -f docker-compose.dev.yml up --build'
 
 ## AI Disclosure
 ### AI Tools Used
