@@ -1,30 +1,26 @@
 # Lab 1 Git Race -- Project Report
 
 ## Description of Changes
-[Detailed description of all changes made]
+He añadido las siguientes funcionalidades:
+1.   Saludo dinámico según la hora del día
+2.   Selección de modo claro/oscuro
+3.   LocalStorage que permite guardar preferencias sobre el punto anterior de un usuario. Así al recargar la página no pierde su visualización favorita.
+4.   Endpoint nuevos de estadísticas e historial, tanto la definición de api como su visualización en el html.
 
 ## Technical Decisions
-[Explanation of technical choices made]
+ Una de las decisiones importantes fue forzar en el nuevo dark.css con !important la aplicación del css en cuestión.
+ Otra decisión fue hacer uso de localStorage como herramienta para guardar las preferencias visuales en la sesión del usuario.
 
 ## Learning Outcomes
-[What you learned from this assignment]
-Lo primero de todo es que para compilar y ejecutar, estoy usando la terminal Git Bash. Esto me ha supuesto tener que aplicar : 'dos2unix gradlew'
- para poder convertir el tipo de saltos de linea de Windows al usado en Unix, y poder así ejecutar el comando de docker : 'docker-compose -f docker-compose.dev.yml up --build'
 
-Después he implementado el modo claro/oscuro, he aprovechado tal cual el modo claro ya dado y he añadido un script para cambiar al modo oscuro cuando en un select que he dejdao en el header eliges la opción de Dark. En ese momento se usa dark.css en el que he ido comprobando las clases necesarias para cambiar el fondo y el color de letras, además de añadir !important para sobreponerme a bootstrap.
+ He aprendido a ver como Fetch API permite interactuar directamente con los endpoints REST y así ver desde el navegador de manera ordenada los datos.
+ Además he aprendido a gestionar correctamente el localStorage y comprobar su funcionamiento desde la herramienta inspeccionar.
 ## AI Disclosure
 ### AI Tools Used
-- [List specific AI tools used]
 - ChatGPT
-
 ### AI-Assisted Work
-- [Describe what was generated with AI assistance]
-- [Percentage of AI-assisted vs. original work]
-- [Any modifications made to AI-generated code]
-He usado ChatGPT para preguntarle con que libreria trabajar para limitar el uso de las funciones segun las peticiones a una API desde un mismo punto. para esto me recomendó añadir a las dependencias la línea :     implementation("com.github.vladimir-bukhtoyarov:bucket4j-core8.4.0")
-. Y una vez puesta simplemente queda hacer un ./gradlew build. Tuve un problema y es que ChatGPT me había dado una versión sin publicar de esa libreria, así que tras un tiempo perdido busqué cuales lo estaban y cambié a la 7.6.0.
-- NO lo he conseguido.
-
+ He utiliado ChatGPT a modo de consulta sobre dudas de sintaxis o sobre donde obtener información.
 ### Original Work
-- [Describe work done without AI assistance]
-- [Your understanding and learning process]
+ Sin la IA y fijándome en lo anterior he hecho todas las modificaciones en el html, y en el http-debug.js. Esto lo he hecho siguiendo lo ya escrito.
+ Para el modo claro oscuro me apoyé en la IA para no redactar el .css de 0 ya que era un trabajo más largo aunque no complicado.
+  Y el localStorage lo había usado ya en otras asignaturas y me he apoyado de ese código.
