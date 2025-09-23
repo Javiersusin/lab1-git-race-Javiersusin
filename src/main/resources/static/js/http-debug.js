@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const responseInfo = document.getElementById('responseInfo');
     const webNameInput = document.getElementById('webName');
     const apiNameInput = document.getElementById('apiName');
-    
+    const testHistoryBtn = document.getElementById('testHistoryBtn');
+    const testStatsBtn = document.getElementById('testStatsBtn'); // Nuevos añadidos de stadísticas e historial
     // Format timestamp
     function getTimestamp() {
         return new Date().toLocaleString();
@@ -110,6 +111,36 @@ document.addEventListener('DOMContentLoaded', function() {
             if (response.ok && data.message) {
                 updateMainMessage(data.message, name);
             }
+        } catch (error) {
+            displayResponseInfo(0, 'Network Error', { error: error.message });
+        }
+    });
+
+    testHistoryBtn.addEventListener('click', async function() {
+        const url = '/api/history';
+        displayRequestInfo(url, 'GET');
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            displayResponseInfo(response.status, response.statusText, data);
+
+        } catch (error) {
+            displayResponseInfo(0, 'Network Error', { error: error.message });
+        }
+    });
+
+    testStatsBtn.addEventListener('click', async function() {
+        const url = '/api/stats';
+        displayRequestInfo(url, 'GET');
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            displayResponseInfo(response.status, response.statusText, data);
+
         } catch (error) {
             displayResponseInfo(0, 'Network Error', { error: error.message });
         }
