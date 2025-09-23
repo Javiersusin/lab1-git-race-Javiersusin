@@ -15,6 +15,7 @@ Después he implementado el modo claro/oscuro, he aprovechado tal cual el modo c
 ## AI Disclosure
 ### AI Tools Used
 - [List specific AI tools used]
+- ChatGPT
 
 ### AI-Assisted Work
 - [Describe what was generated with AI assistance]

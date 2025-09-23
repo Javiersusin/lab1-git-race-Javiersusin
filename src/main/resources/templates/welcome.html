@@ -180,8 +180,11 @@
                 } else {
                     if (existingLink) existingLink.remove();
                 }
+                localStorage.setItem("theme", theme); // Guardo variable local con preferencia visual usuario
             };
-            applyTheme(themeSelector.value);
+            const savedTheme = localStorage.getItem("theme") || "light"; // Miramos si está iniciado a algo la preferencia del user
+            themeSelector.value = savedTheme;
+            applyTheme(savedTheme);
             themeSelector.addEventListener("change", (event) => {
                 applyTheme(event.target.value);
             });
